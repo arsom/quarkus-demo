@@ -1,0 +1,22 @@
+quarkus:
+  datasource:
+    db-kind: mariadb
+    username: root
+    password: rootmaria
+    jdbc:
+      url: jdbc:mariadb://localhost:3308/quarkus
+    health:
+      enabled: true
+  hibernate-orm:
+    database:
+      generation: drop-and-create
+    log:
+      sql: true
+  http:
+    root-path: /api/v1
+'%dev':
+  demo:
+    initial-data: true
+'%prod':
+  demo:
+    initial-data: false
